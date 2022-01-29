@@ -1,7 +1,7 @@
 body {
 	padding-top: 30px;
 	font-family: Roboto, arial, sans-serif;
-  font-style: capita;
+	font-style: capita;
 }
 
 h1 {
@@ -15,9 +15,8 @@ ul {
 	font-size: 16px;
 	list-style: none;
 	margin: 0 0 20px;
-  color: #3aafa9;
+	color: #3aafa9;
 }
-
 
 .weather-app {
 	border: 1px solid #3aafa9;
@@ -36,7 +35,7 @@ ul {
 	font-size: 64px;
 	line-height: 1;
 	color: #17252ad0;
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .weather-icon {
@@ -81,6 +80,10 @@ a:hover {
 
 a:active {
 	color: #17252ac4;
-  text-decoration: underlinem;
+	text-decoration: underlinem;
 }
 
+.open-source {
+	text-align: center;
+	font-size: 11px;
+}
