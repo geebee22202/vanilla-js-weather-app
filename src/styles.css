@@ -62,7 +62,7 @@ ul {
 	color: #3aafa9;
 }
 
-a:link {
+a {
 	color: #3aafa9;
 	background-color: transparent;
 	text-decoration: none;
@@ -71,7 +71,6 @@ a:link {
 a:visited {
 	color: #17252ac4;
 	background-color: transparent;
-	text-decoration: underline;
 }
 
 a:hover {
@@ -80,10 +79,10 @@ a:hover {
 
 a:active {
 	color: #17252ac4;
-	text-decoration: underlinem;
+
 }
 
 .open-source {
 	text-align: center;
-	font-size: 11px;
+	font-size: 13px;
 }
