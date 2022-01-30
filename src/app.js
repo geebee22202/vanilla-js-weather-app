@@ -1,5 +1,5 @@
 function formattedDate(timestamp) {
-  let date = new Date(timestamp);
+	let date = new Date(timestamp);
 	let days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
 	let day = days[date.getDay()];
 
@@ -35,9 +35,14 @@ function showTemp(response) {
 	document.querySelector('#temperature').innerHTML = Math.round(response.data.main.temp);
 	document.querySelector('#humidity').innerHTML = response.data.main.humidity;
 	document.querySelector('#wind').innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector('#weather-description').innerHTML = response.data.weather[0].description;
-  document.querySelector("#date").innerHTML = formattedDate(response.data.dt * 1000)
-
+	document.querySelector('#weather-description').innerHTML = response.data.weather[0].description;
+	document.querySelector('#date').innerHTML = formattedDate(response.data.dt * 1000);
+	document
+		.querySelector('#weather-icon')
+		.setAttribute('src', `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+	document
+		.querySelector('#weather-icon')
+		.setAttribute('alt', `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`);
 }
 function showCurrentLocation(position) {
 	let apiKey = '935a08ec240b922ff7c41b1be851c24f';
