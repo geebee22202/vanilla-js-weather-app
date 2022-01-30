@@ -18,11 +18,14 @@ ul {
 	color: #3aafa9;
 }
 
+.weather-app-wrapper {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
 .weather-app {
 	border: 1px solid #3aafa9;
 	border-radius: 7px;
-	max-width: 650px;
-	margin: 0 auto;
 	padding: 20px;
 	background-color: #def2f171;
 }
@@ -68,21 +71,19 @@ a {
 	text-decoration: none;
 }
 
-a:visited {
-	color: #17252ac4;
-	background-color: transparent;
-}
-
 a:hover {
 	color: #17252ac4;
 }
 
 a:active {
 	color: #17252ac4;
-
 }
 
 .open-source {
-	text-align: center;
+	padding-top: 10px;
 	font-size: 13px;
+}
+
+.open-source-link {
+	color: #3aafa9;
 }
