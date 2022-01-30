@@ -18,7 +18,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form class="search-form" id="search-form">
+          <form class="search-form" id="search-form" class="mb-3">
             <div class="row">
               <div class="col-6">
                 <input
@@ -44,23 +44,25 @@
               </div>
             </div>
           </form>
-          <h1 id="city"></h1>
-          <ul>
-            <li > Last updated: <span id="date"></span>
-            </li>
-            <li id="weather-description"></li>
-          </ul>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li > Last updated: <span id="date"></span>
+              </li>
+              <li id="weather-description"></li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
-              <div class="clearfix">
+              <div class="clearfix weather-temp">
                 <img
-                  src=""
+                  src="#"
                   alt=""
-                  class="weather-icon float-left"
+                  class="float-left"
                   id="weather-icon"
                 />
                 <div class="float-left">
-                  <span class="temperature" id="temperature">19</span><span class="units">
+                  <strong id="temperature"></strong><span class="units">
                     <a href="#" id="fahrenheit-link">°F</a>
                   </span>
                 </div>
