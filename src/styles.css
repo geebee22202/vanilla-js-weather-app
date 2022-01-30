@@ -29,7 +29,7 @@ li::first-letter {
 }
 
 .weather-app-wrapper {
-	max-width: 650px;
+	max-width: 600px;
 	margin: 30px auto;
 }
 
@@ -86,7 +86,6 @@ li::first-letter {
 	position: relative;
 	top: -32px;
 	left: -30px;
-	color: #3aafa9;
 }
 
 a {
@@ -100,7 +99,7 @@ a:hover {
 	text-decoration: none;
 }
 
-a:active {
+a:focus {
 	color: #17252ac4;
 }
 
