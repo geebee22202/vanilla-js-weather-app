@@ -1,13 +1,14 @@
-function formattedDate() {
+function formattedDate(timestamp) {
+  let date = new Date(timestamp);
 	let days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
-	let day = days[now.getDay()];
+	let day = days[date.getDay()];
 
-	let hours = now.getHours();
+	let hours = date.getHours();
 	if (hours < 10) {
 		hours = `0${hours}`;
 	}
 
-	let minutes = now.getMinutes();
+	let minutes = date.getMinutes();
 	if (minutes < 10) {
 		minutes = `0${minutes}`;
 	}
@@ -34,8 +35,9 @@ function showTemp(response) {
 	document.querySelector('#temperature').innerHTML = Math.round(response.data.main.temp);
 	document.querySelector('#humidity').innerHTML = response.data.main.humidity;
 	document.querySelector('#wind').innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector('#weather-description').innerHTML = response.data.weather[0].description;
+  document.querySelector("#date").innerHTML = formattedDate(response.data.dt * 1000)
 
-	document.querySelector('#weather-description').innerHTML = response.data.weather[0].description;
 }
 function showCurrentLocation(position) {
 	let apiKey = '935a08ec240b922ff7c41b1be851c24f';
@@ -51,13 +53,10 @@ function getCurrentLocation(event) {
 }
 
 let searchForm = document.querySelector('#search-form');
-let now = new Date();
-let date = document.querySelector('#date');
 
 let currentLocation = document.querySelector('#current-location-btn');
 currentLocation.addEventListener('click', getCurrentLocation);
 
-date.innerHTML = formattedDate(date);
 searchForm.addEventListener('submit', handleSearch);
 searchCity('New York');
 
