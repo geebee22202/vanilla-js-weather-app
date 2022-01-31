@@ -60,14 +60,39 @@ function getCurrentLocation(event) {
 
 function convertToFahrenheit(event) {
 	event.preventDefault();
-  let temperatureElement = document.querySelector('#temperature');
-	temperatureElement.innerHTML = Math.round(fahrenheitTemp)
+	let temperatureElement = document.querySelector('#temperature');
+	temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 function convertToCelsius(event) {
 	event.preventDefault();
 	let temperatureElement = document.querySelector('#temperature');
 	let celsius = (fahrenheitTemp - 32) * 5 / 9;
 	temperatureElement.innerHTML = Math.round(celsius);
+}
+function displayForecast() {
+	let forecastElement = document.querySelector('#forecast');
+	let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+	forecastHTML = `<div class="row">`;
+	days.forEach(function (day) {
+		forecastHTML =
+			forecastHTML +
+			` <div class="col-2">
+          <div class="weather-forecast-date">
+              ${day}
+          </div>
+          <img 
+          src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" 
+          alt="cloud" 
+          width="45px">
+          <div class="weather-forecast-temp">
+            <span class="forecast-temp-max">18°</span><span class="forecast-temp-min">
+              12°
+            </span>
+          </div>
+        </div>`;
+	});
+	forecastHTML = forecastHTML + `</div>`;
+	forecastElement.innerHTML = forecastHTML;
 }
 
 let searchForm = document.querySelector('#search-form');
@@ -86,3 +111,4 @@ let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', convertToCelsius);
 
 searchCity('New York');
+displayForecast();
