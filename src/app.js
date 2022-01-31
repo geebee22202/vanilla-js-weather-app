@@ -65,18 +65,6 @@ function getCurrentLocation(event) {
 	event.preventDefault();
 	navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
-
-function convertToFahrenheit(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector('#temperature');
-	temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-function convertToCelsius(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector('#temperature');
-	let celsius = (fahrenheitTemp - 32) * 5 / 9;
-	temperatureElement.innerHTML = Math.round(celsius);
-}
 function formatDailyForecast(timestamp) {
 	let date = new Date(timestamp * 1000);
 	let day = date.getDay();
@@ -119,12 +107,6 @@ currentLocation.addEventListener('click', getCurrentLocation);
 
 searchForm.addEventListener('submit', handleSearch);
 
-let fahrenheitTemp = null;
 
-let fahrenheitLink = document.querySelector('#fahrenheit-link');
-fahrenheitLink.addEventListener('click', convertToFahrenheit);
-
-let celsiusLink = document.querySelector('#celsius-link');
-celsiusLink.addEventListener('click', convertToCelsius);
 
 searchCity('New York');
