@@ -53,18 +53,6 @@ function showTemp(response) {
 
 	getForecast(response.data.coord);
 }
-function showCurrentLocation(position) {
-	let apiKey = '935a08ec240b922ff7c41b1be851c24f';
-	let lat = position.coords.latitude;
-	let lon = position.coords.longitude;
-	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-	axios.get(apiUrl).then(showTemp);
-}
-
-function getCurrentLocation(event) {
-	event.preventDefault();
-	navigator.geolocation.getCurrentPosition(showCurrentLocation);
-}
 function formatDailyForecast(timestamp) {
 	let date = new Date(timestamp * 1000);
 	let day = date.getDay();
@@ -102,8 +90,6 @@ function displayForecast(response) {
 
 let searchForm = document.querySelector('#search-form');
 
-let currentLocation = document.querySelector('#current-location-btn');
-currentLocation.addEventListener('click', getCurrentLocation);
 
 searchForm.addEventListener('submit', handleSearch);
 

@@ -37,7 +37,7 @@ li::first-letter {
 	border: 1px solid #3aafa9;
 	border-radius: 7px;
 	padding: 20px;
-	background-color: #def2f171;
+	background-color: #def2f121;
 }
 
 .search-form {
@@ -71,6 +71,7 @@ li::first-letter {
 
 .weather-elements {
 	padding-left: 60px;
+	margin-top: 20px;
 }
 
 .btn-primary {
